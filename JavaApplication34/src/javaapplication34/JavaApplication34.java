@@ -72,22 +72,24 @@ public class JavaApplication34 {
                 str += node.toString()+"("+bf+")"+", ";
                 if(bf>1){
                     str2+="L";
-                    if(>0){
+                    DefaultMutableTreeNode xi = (DefaultMutableTreeNode) x.getChildAt(0);
+                    if(Integer.parseInt(x.toString()) < Integer.parseInt(xi.toString())){
                         str2+="L";
                         str3+=node.toString();
                     }
-                    else if(x<0){
+                    else if(Integer.parseInt(x.toString()) > Integer.parseInt(xi.toString())){
                         str2+="R";
                         str3+=x.toString()+", "+node.toString();
                     }
                 }
                 else if(bf<-1){
                     str2+="R";
-                    if(>0){
+                    DefaultMutableTreeNode yi = (DefaultMutableTreeNode) y.getChildAt(0);
+                    if(Integer.parseInt(y.toString()) < Integer.parseInt(yi.toString())){
                         str2+="R";
                         str3+=node.toString();
                     }
-                    else if(<0){
+                    else if(Integer.parseInt(y.toString()) > Integer.parseInt(yi.toString())){
                         str2+="L";
                         str3+=y.toString()+", "+node.toString();
                     }
